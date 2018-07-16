@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace TextGame
 {
@@ -11,17 +12,18 @@ namespace TextGame
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
 
-time.sleep(3)
-
+Thread.Sleep(3);
+   /* trying to figur time for sleep */
+   
 Console.WriteLine("You enter a dark cavern out of curiosity. It is dark and you can only make out a small stick on the floor.")
-Console.WriteLine("Do you take it? [y/n]: "))
-
+/*Console.WriteLine("Do you take it? [y/n]: "))
+   
 # STICK TAKEN
-if ch1 in ['y', 'Y', 'Yes', 'YES', 'yes']:
+if ch1 in ['y', 'Y', 'Yes', 'YES', 'yes']
     Console.WriteLine("You have taken the stick!")
-    time.sleep(2)
+    Thread.Sleep (2);
     stick = 1
-
+        
 # STICK NOT TAKEN
 else:
     Console.WriteLine("You did not take the stick")
@@ -44,8 +46,8 @@ if ch2 in ['y', 'Y', 'Yes', 'YES', 'yes']:
 
         # WITH STICK
         if stick == 1:
-            print ("You only have a stick to fight with!")
-            print ("You quickly jab the spider in it's eye and gain an advantage")
+            Console. WriteLine ("You only have a stick to fight with!")
+            Console.WriteLine ("You quickly jab the spider in it's eye and gain an advantage")
             time.sleep(2)
             Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             Console.WriteLine ("                  Fighting...                   ")
