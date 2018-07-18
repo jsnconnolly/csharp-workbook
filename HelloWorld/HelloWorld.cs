@@ -32,7 +32,7 @@ public class Program
 		My name is {0} {1}. 
 		I am {3} in dog years. 
 		My favorite band is {4}. 
-		I support {5}! ", name, lastname, age, year*age, band, team,);
+		I support {5}! " , name, lastname, age, year*age, band, team);
 
 
 
