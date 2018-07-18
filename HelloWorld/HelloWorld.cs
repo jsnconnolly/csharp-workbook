@@ -9,7 +9,7 @@ public class Program
 		int age = 0;
 		int year = 7;
 		string band = "";
-		string team = ""
+		string team = "";
 		
 
 
