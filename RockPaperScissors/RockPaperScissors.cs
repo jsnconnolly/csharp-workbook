@@ -8,9 +8,9 @@ namespace RockPaperScissors
         
         {
 
-            Console.WriteLine("Rock, Paper or Sissors?:");
+            Console.WriteLine("Rock, Paper or Scissors?:");
             string hand1 = Console.ReadLine().ToLower();
-            
+
             string hand2 = null;
             Random rnd = new Random();
                 int rps = rnd.Next(0,2); 
@@ -24,7 +24,7 @@ namespace RockPaperScissors
             }
             else if (rps == 2)
             {
-                hand2 = "sissors";
+                hand2 = "scissors";
             }
                  
             
@@ -40,19 +40,19 @@ namespace RockPaperScissors
             /*Random rnd = new Random();
                 int rock = rnd.Next(0,2); 
                 int paper = rnd.Next(0,2);   
-                int sissors = rnd.Next(0,2);*/   
+                int scissors = rnd.Next(0,2);*/   
             
             string win = null;
             if (hand1 == hand2)
             {
                win = "TIE!";
             }
-            else if (hand1 == "paper" && hand2 == "rock" || hand1 == "rock" && hand2 == "sissors" || hand1 == "sissors" && hand2 == "paper")
+            else if (hand1 == "paper" && hand2 == "rock" || hand1 == "rock" && hand2 == "scissors" || hand1 == "scissors" && hand2 == "paper")
             {
                 win = "You Win!";
             }
             
-            else if (hand1 == "rock" && hand2 == "paper" || hand1 == "sissors" && hand2 == "rock" || hand1 == "paper" && hand2 == "sissors")
+            else if (hand1 == "rock" && hand2 == "paper" || hand1 == "scissors" && hand2 == "rock" || hand1 == "paper" && hand2 == "scissors")
             {
                 win = "Computer Wins!";
             }
