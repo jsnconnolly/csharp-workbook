@@ -20,7 +20,7 @@ namespace RockPaperScissors
             }
             else if (rps == 1)
             {
-                hand2 = "paper"; 
+                hand2 = "paper";
             }
             else if (rps == 2)
             {
@@ -29,18 +29,13 @@ namespace RockPaperScissors
                  
             
             Console.WriteLine("Computer played:");
+            Console.WriteLine(hand2.ToString());
             Console.WriteLine(CompareHands(hand1, hand2));
-
-            // leave this command at the end so your program does not close automatically
         
         }
         
         public static string CompareHands(string hand1, string hand2)
-        {
-            /*Random rnd = new Random();
-                int rock = rnd.Next(0,2); 
-                int paper = rnd.Next(0,2);   
-                int scissors = rnd.Next(0,2);*/   
+        {    
             
             string win = null;
             if (hand1 == hand2)
