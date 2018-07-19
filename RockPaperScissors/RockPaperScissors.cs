@@ -14,6 +14,7 @@ namespace RockPaperScissors
             string hand2 = null;
             Random rnd = new Random();
                 int rps = rnd.Next(0,2); 
+
             if (rps == 0)
             {
                 hand2 = "rock";
