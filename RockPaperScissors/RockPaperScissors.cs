@@ -7,8 +7,8 @@ namespace RockPaperScissors
         public static void Main()
         
         {
-
-            Console.WriteLine("Rock, Paper or Scissors?:");
+            Console.WriteLine("Hello []");
+            Console.WriteLine("Enter Rock, Paper or Scissors?");
             string hand1 = Console.ReadLine().ToLower();
 
             string hand2 = null;
