@@ -16,9 +16,10 @@ namespace TicTacToe
         {
             do
             {
+                /*swap player turn */
                 DrawBoard();
                 GetInput();
-
+            /*loop */
             } while (!CheckForWin() && !CheckForTie());
 
             // leave this command at the end so your program does not close automatically
@@ -32,18 +33,26 @@ namespace TicTacToe
             int row = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Column:");
             int column = int.Parse(Console.ReadLine());
+            PlaceMark(row, column);
         }
-
+        /*update board with correct value and position */
         public static void PlaceMark(int row, int column)
         {
+            board[row][column] = playerTurn;
         // your code goes here
         }
 
         public static bool CheckForWin()
         {
             // your code goes here
+            bool won = false;
+            if(HorizontalWin() || VerticalWin() || DiagonalWin())
+            {
+                won = true;
+                Console.Write("You Won!");
+            }
 
-            return false;
+            return won;
         }
 
         public static bool CheckForTie()
@@ -52,12 +61,25 @@ namespace TicTacToe
 
             return false;
         }
-        
+        /*this method will return true when any row has three of a kind in said row otherwise it will return false */
         public static bool HorizontalWin()
         {
-        // your code goes here
+            /*Todo if cells are empty what happens, make sure empty doesnt caount as win */
+            bool WonHorizontally = false;
+            if(board [0][0] == board[0][1] && board [0][1] == board [0][2])
+            {
+                WonHorizontally = true;
+            }
+            else if(board [1][0] == board[1][1] && board [1][1] == board [1][2])
+            {
+                WonHorizontally = true;
+            }
+            else if(board [2][0] == board[2][1] && board [2][1] == board [2][2])
+            {
+                WonHorizontally = true;
+            }
+            return WonHorizontally;
 
-        return false;
         }
 
         public static bool VerticalWin()
