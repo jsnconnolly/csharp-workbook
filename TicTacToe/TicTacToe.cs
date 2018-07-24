@@ -17,6 +17,7 @@ namespace TicTacToe
             do
             {
                 /*swap player turn */
+                
                 DrawBoard();
                 GetInput();
             /*loop */
@@ -62,6 +63,7 @@ namespace TicTacToe
             return false;
         }
         /*this method will return true when any row has three of a kind in said row otherwise it will return false */
+        
         public static bool HorizontalWin()
         {
             /*TODO!!! if cells are empty what happens, make sure empty doesnt caount as win */
