@@ -64,7 +64,7 @@ namespace TicTacToe
         /*this method will return true when any row has three of a kind in said row otherwise it will return false */
         public static bool HorizontalWin()
         {
-            /*Todo if cells are empty what happens, make sure empty doesnt caount as win */
+            /*TODO!!! if cells are empty what happens, make sure empty doesnt caount as win */
             bool WonHorizontally = false;
             if(board [0][0] == board[0][1] && board [0][1] == board [0][2])
             {
@@ -84,16 +84,35 @@ namespace TicTacToe
 
         public static bool VerticalWin()
         {
-            // your code goes here
-
-            return false;
+            bool WonVertically = false;
+            if(board [0][0] == board[1][0] && board [1][0] == board [2][0])
+            {
+                WonVertically = true;
+            }
+            else if(board [0][1] == board[1][1] && board [1][1] == board [2][1])
+            {
+                WonVertically = true;
+            }
+            else if(board [0][2] == board[1][2] && board [1][2] == board [2][2])
+            {
+                WonVertically = true;
+            }
+            return WonVertically;
         }
 
         public static bool DiagonalWin()
         {
-            // your code goes here
+             bool WonDiagonally = false;
+            if(board [0][0] == board[1][1] && board [1][1] == board [2][2])
+            {
+                WonDiagonally = true;
+            }
+            else if(board [0][2] == board[1][1] && board [1][1] == board [2][0])
+            {
+                WonDiagonally = true;
+            }
 
-            return false;
+            return WonDiagonally;
         }
 
         public static void DrawBoard()
