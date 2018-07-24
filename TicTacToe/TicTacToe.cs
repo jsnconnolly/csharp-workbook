@@ -10,13 +10,30 @@ namespace TicTacToe
             new string[] {" ", " ", " "},
             new string[] {" ", " ", " "},
             new string[] {" ", " ", " "}
+
         };
 
         public static void Main()
         {
             do
             {
-                /*swap player turn */
+                /*swap player turn ? Does this make sence to execute*/
+            if (playerTurn==1)
+            {
+                playerTurn='X';
+            }
+            else
+            {
+                playerTurn='O';
+            }
+            if (turn%2)
+            {
+                playerTurn=1;
+            }
+            else
+            {
+                player=2;
+            }
                 
                 DrawBoard();
                 GetInput();
