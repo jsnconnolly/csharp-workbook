@@ -70,9 +70,9 @@ namespace TicTacToe
 
         public static bool CheckForTie()
         {
-            // your code goes here
+            // checking for Tie
             bool tie = false;
-            if(board [0][0] != " " && board [0][1] != " " && board [0][2] != " " )
+            if(board [0][0] != " " && board [0][1] != " " && board [0][2] != " " && board [1][0] != " " && board [1][1] != " " && board [1][2] != " " && board [2][0] != " " && board [2][1] != " " && board [2][2] != " ")
         {
                 tie = true;
                 Console.Write("Tie!");
@@ -83,7 +83,7 @@ namespace TicTacToe
         
         public static bool HorizontalWin()
         {
-            /*TODO!!! if cells are empty what happens, make sure empty doesnt count as win */
+            /* if cells are empty what happens, make sure empty does not count as win */
 
             bool WonHorizontally = false;
             if(board [0][0] == board[0][1] && board [0][1] == board [0][2] && board [0][0] != " " && board [0][1] != " " && board [0][2] != " ")
