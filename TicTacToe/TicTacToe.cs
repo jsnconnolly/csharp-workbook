@@ -32,9 +32,23 @@ namespace TicTacToe
         {
             Console.WriteLine("Player " + playerTurn);
             Console.WriteLine("Enter Row:");
-            int row = int.Parse(Console.ReadLine());
+            
+            string input = Console.ReadLine();
+            // limits input to 0, 1, 2
+             bool sweet = false;
+            while(sweet == false) 
+                Console.Write("Please Enter 0 ,1 or 2");
+                if(input == "0" || input == "1" || input == "2")
+                {
+                    sweet = true;
+                    Console.Write("Sweet");
+                }
+             int row = int.Parse(input);
+            //int row = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Enter Column:");
             int column = int.Parse(Console.ReadLine());
+            
             PlaceMark(row, column);
              if (playerTurn == "O")
             {
