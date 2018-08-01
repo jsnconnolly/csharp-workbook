@@ -6,7 +6,7 @@ namespace PigLatin
     {
         static void Main(string[] args)
     {
-        Console.WriteLine("Enter a word/sentence to convert to PigLatin:");
+        Console.WriteLine("Enter a word to PigLatin:");
         string sentence = Console.ReadLine();
         string pigLatin = ToPigLatin(sentence);
         Console.WriteLine(pigLatin);
