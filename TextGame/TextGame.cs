@@ -48,13 +48,13 @@ namespace TextGame
             Console.WriteLine("You enter a dark cavern out of curiosity. It is dark and you can only make out a small stick on the floor.");
             Console.WriteLine("Do you take it? [y/n]: ");
        
-/*# STICK TAKEN*/
+    /*# STICK TAKEN*/
             if (userInput.ToLower() == "yes")
             {
                 Console.WriteLine("You have taken the stick!");
                 stick = 1;
              }
-/*# STICK NOT TAKEN*/
+    /*# STICK NOT TAKEN*/
             else
             {
                 Console.WriteLine("You did not take the stick");
@@ -66,7 +66,7 @@ namespace TextGame
     }
 }
 
-//# APPROACH SPIDER
+    //# APPROACH SPIDER
             if (userInput.ToLower() == "yes");
             {
                 Console.WriteLine("You approach the object...");
@@ -118,54 +118,54 @@ namespace TextGame
             }
        }
 }
-        /*# WITHOUT STICK
+        //# WITHOUT STICK
         else:
             Console.WriteLine ("You don't have anything to fight with!");
-            Console.WriteLinesleep(2);
+            userInput = Console.ReadLine();
             Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine ("                  Fighting...                   ");
             Console.WriteLine ("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
             Console.WriteLine ("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
             Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            time.sleep(2)
-            fdmg1 = int(random.randint(1, 8))
-            edmg1 = int(random.randint(1, 5))
-            Console.WriteLine ("you hit a", fdmg1)
-            Console.WriteLine ("the spider hits a", edmg1)
-            time.sleep(2)
+            userInput = Console.ReadLine();
+            fdmg1 = int(random.randint(1, 8));
+            edmg1 = int(random.randint(1, 5));
+            Console.WriteLine ("you hit a", fdmg1);
+            Console.WriteLine ("the spider hits a", edmg1);
+            userInput = Console.ReadLine();
 
             if edmg1 > fdmg1:
-                Console.WriteLine ("The spider has dealt more damage than you!")
-                complete = 0
+                Console.WriteLine ("The spider has dealt more damage than you!");
+                complete = 0;
                 return complete
 
             elif fdmg1 < 5:
-                Console.WriteLine ("You didn't do enough damage to kill the spider, but you manage to escape")
-                complete = 1
+                Console.WriteLine ("You didn't do enough damage to kill the spider, but you manage to escape");
+                complete = 1;
                 return complete
 
             else:
-                Console.WriteLine ("You killed the spider!")
-                complete = 1
+                Console.WriteLine ("You killed the spider!");
+                complete = 1;
                 return complete
 
-    #DON'T FIGHT SPIDER
-    Console.WriteLine ("You choose not to fight the spider.")
-    time.sleep(1)
-    Console.WriteLine ("As you turn away, it ambushes you and impales you with it's fangs!!!")
-    complete = 0
+    //#DON'T FIGHT SPIDER
+    Console.WriteLine ("You choose not to fight the spider.");
+    userInput = Console.ReadLine();
+    Console.WriteLine ("As you turn away, it ambushes you and impales you with it's fangs!!!");
+    complete = 0;
     return complete
 
-# DON'T APPROACH SPIDER
+//# DON'T APPROACH SPIDER
 else:
-        Console.WriteLine ("You turn away from the glowing object, and attempt to leave the cave...")
-        time.sleep(1)
-        Console.WriteLine ("But something won't let you....")
-        time.sleep(2)
-        complete = 0
+        Console.WriteLine ("You turn away from the glowing object, and attempt to leave the cave...");
+        userInput = Console.ReadLine();
+        Console.WriteLine ("But something won't let you....");
+        userInput = Console.ReadLine();
+        complete = 0;
         return complete
 
-# game loop
+/*# game loop
 alive = True
 while alive:
 
