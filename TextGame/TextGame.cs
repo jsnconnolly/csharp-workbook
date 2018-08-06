@@ -66,7 +66,7 @@ namespace TextGame
     }
 }
 
-/*# APPROACH SPIDER
+//# APPROACH SPIDER
             if (userInput.ToLower() == "yes");
             {
                 Console.WriteLine("You approach the object...");
@@ -76,44 +76,49 @@ namespace TextGame
                 Console.WriteLine("The eye belongs to a giant spider!");
             }
             
-        string chapter3 = Console.ReadLine("Do you try to fight it? [Y/N]");
+        string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
 
-   /* # FIGHT SPIDER
-    if ch3 in ['y', 'Y', 'Yes', 'YES', 'yes']:
+    //# FIGHT SPIDER
+    if (ch3.ToLower() =='y', 'Yes');
 
-        # WITH STICK
-        if stick == 1:
+        //# WITH STICK
+        if (stick == 1)
+            {
             Console. WriteLine ("You only have a stick to fight with!");
             Console.WriteLine ("You quickly jab the spider in it's eye and gain an advantage");
-            time.sleep(2)
+            userInput = Console.ReadLine();
             Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine ("                  Fighting...                   ");
             Console.WriteLine ("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
             Console.WriteLine ("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
             Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            time.sleep(2)
-            fdmg1 = int(random.randint(3, 10))
-            edmg1 = int(random.randint(1, 5))
+            userInput = Console.ReadLine();
+            fdmg1 = int(random.randint(3, 10));
+            edmg1 = int(random.randint(1, 5));
             Console.WriteLine ("you hit a", fdmg1);
             Console.WriteLine ("the spider hits a", edmg1);
-            time.sleep(2)
+            userInput = Console.ReadLine();
 
-            if edmg1 > fdmg1:
+            if (edmg1 > fdmg1)
                 Console.WriteLine ("The spider has dealt more damage than you!");
                 complete = 0
                 return complete
 
-            elif fdmg1 < 5:
+            else if (fdmg1 < 5)
+            {
+
                 Console.WriteLine ("You didn't do enough damage to kill the spider, but you manage to escape");
-                complete = 1
-                return complete
+                complete = 1;
+            }
 
-            else:
+            else
+            {
                 Console.WriteLine ("You killed the spider!");
-                complete = 1
-                return complete
-
-        # WITHOUT STICK
+                complete = 1;
+            }
+       }
+}
+        /*# WITHOUT STICK
         else:
             Console.WriteLine ("You don't have anything to fight with!");
             Console.WriteLinesleep(2);
