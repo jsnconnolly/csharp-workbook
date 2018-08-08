@@ -15,6 +15,7 @@ namespace TextGame
             Console.WriteLine("Welcome to the cavern of secrets!");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             takerofstick();
+            spiderEncounter();
 
         }
 
@@ -42,19 +43,19 @@ namespace TextGame
             Console.WriteLine ("As you proceed further into the cave, you see a small glowing object");
             Console.WriteLine ("Do you approach the object? [y/n]");
         
-        string chapter2 = Console.ReadLine();
+            string chapter2 = Console.ReadLine();
 
        
             Console.WriteLine("You enter a dark cavern out of curiosity. It is dark and you can only make out a small stick on the floor.");
             Console.WriteLine("Do you take it? [y/n]: ");
        
-    /*# STICK TAKEN*/
+            /*# STICK TAKEN*/
             if (userInput.ToLower() == "yes")
             {
                 Console.WriteLine("You have taken the stick!");
                 stick = 1;
              }
-    /*# STICK NOT TAKEN*/
+            /*# STICK NOT TAKEN*/
             else
             {
                 Console.WriteLine("You did not take the stick");
@@ -63,21 +64,28 @@ namespace TextGame
             Console.WriteLine("As you proceed further into the cave, you see a small glowing object");
             Console.WriteLine("Do you approach the object? [y/n]");
         }
+    
+
+
+        //# APPROACH SPIDER
+        static void spiderEncounter()
+            {        
+                string userInput = Console.ReadLine();
+                
+                if (userInput.ToLower() == "yes")
+                {
+                    Console.WriteLine("You approach the object...");
+                    userInput = Console.ReadLine();
+                    Console.WriteLine("As you draw closer, you begin to make out the object as an eye!");
+                    userInput = Console.ReadLine();
+                    Console.WriteLine("The eye belongs to a giant spider!");
+                }
+            }
+            //My Code Here
     }
 }
 
-    //# APPROACH SPIDER
-            if (userInput.ToLower() == "yes")
-            {
-                Console.WriteLine("You approach the object...");
-                object = 1
-                userInput = Console.ReadLine();
-                Console.WriteLine("As you draw closer, you begin to make out the object as an eye!");
-                eye = 1
-                userInput = Console.ReadLine();
-                Console.WriteLine("The eye belongs to a giant spider!");
-            }
-            
+
        /* string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
 
     //# FIGHT SPIDER
