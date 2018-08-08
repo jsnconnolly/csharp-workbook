@@ -78,6 +78,7 @@ namespace RockPaperScissors
             else
             {
                 //returns line without computer play
+                //replaces Try Catch 
                 Console.WriteLine("Invalid Selection");
                 Main();
             }
