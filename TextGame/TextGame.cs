@@ -71,7 +71,7 @@ namespace TextGame
         static void spiderEncounter()
             {        
                 string userInput = Console.ReadLine();
-                
+
                 if (userInput.ToLower() == "yes")
                 {
                     Console.WriteLine("You approach the object...");
@@ -86,7 +86,7 @@ namespace TextGame
 }
 
 
-       /* string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
+         //string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
 
     //# FIGHT SPIDER
     /*if (ch3.ToLower() =='y', 'Yes');
