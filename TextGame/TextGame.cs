@@ -67,19 +67,21 @@ namespace TextGame
 }
 
     //# APPROACH SPIDER
-            if (userInput.ToLower() == "yes");
+            if (userInput.ToLower() == "yes")
             {
                 Console.WriteLine("You approach the object...");
+                object = 1
                 userInput = Console.ReadLine();
                 Console.WriteLine("As you draw closer, you begin to make out the object as an eye!");
+                eye = 1
                 userInput = Console.ReadLine();
                 Console.WriteLine("The eye belongs to a giant spider!");
             }
             
-        string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
+       /* string ch3 = Console.ReadLine("Do you try to fight it? [Y/N]");
 
     //# FIGHT SPIDER
-    if (ch3.ToLower() =='y', 'Yes');
+    /*if (ch3.ToLower() =='y', 'Yes');
 
         //# WITH STICK
         if (stick == 1)
