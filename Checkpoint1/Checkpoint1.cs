@@ -13,6 +13,7 @@ namespace Checkpoint1
             Console.WriteLine("4 - guessNum");
             Console.WriteLine("5 - findMax");
             string input = Console.ReadLine();
+            // project Menu
             
             if (input == "1")
             {
@@ -21,7 +22,19 @@ namespace Checkpoint1
             
             else if(input == "2")
             {
-                //the next function
+                sumCalc();
+            }
+            else if(input == "3")
+            {
+                factoral();
+            }
+            else if(input == "4")
+            {
+                guessNum();
+            }
+            else if(input == "5")
+            {
+                findMax();
             }
 
         }
@@ -41,13 +54,49 @@ namespace Checkpoint1
         // next function here
         }
         
+        
+        
         static void factoral()
         {
-        // next function here
+        int sum=1;
+        Console.WriteLine("enter a number:");
+        int z = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= z; i++)
+        {
+        sum=sum*i; 
+        }
+        Console.WriteLine("the factorial of {0} is :{1} ",z,sum);
+        Console.Read();
+        }    
+    
+
+      static void guessNum()
+        {  
+        Random random = new Random();
+
+        int returnValue = random.Next(1, 10);
+
+        int Guess = 0;
+
+        Console.WriteLine("Guess a Number Between 1 and 10");
+
+        while (Guess != returnValue)
+        {
+            Guess = Convert.ToInt32(Console.Read());
+
+            if (Guess < returnValue)
+            {
+                Console.WriteLine("No, Higher" + Guess + ". Can you guess what it is?");
+            }
+            else if (Guess > returnValue)
+            {
+                Console.WriteLine("No, Lower" + Guess + ". Can you guess what it is?");
+            }
+
         }
 
-        static void guessNum()
-        {       
+        Console.WriteLine("Well done! The answer was " + returnValue);
+        Console.ReadLine();     
          // next function here
         }
 
