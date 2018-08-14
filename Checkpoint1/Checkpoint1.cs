@@ -35,13 +35,26 @@ namespace Checkpoint1
             Console.WriteLine(i);
         }
         }
+        
         static void sumCalc()
         {
         // next function here
         }
-    
+        
+        static void factoral()
+        {
+        // next function here
+        }
 
+        static void guessNum()
+        {       
+         // next function here
+        }
 
+        static void findMax()
+        {
+        // next function here
+        }
 
 
         
