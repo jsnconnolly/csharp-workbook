@@ -7,16 +7,31 @@ namespace RockPaperScissors
         public static int score1 = 0;
         public static int score2 = 0;  //default values
 
+        public String getUserHand(){
+            String input = Console.ReadLine().ToLower();
+            if(input != "rock" && input != "scissors" && input != "paper") {
+                throw new Exception("Bad hand...");
+            }
+            return input;
+        }
+
         public static void Main()
         
         {
             Console.WriteLine("Hello");
             Console.WriteLine("Enter Rock, Paper or Scissors");
-            string hand1 = Console.ReadLine().ToLower();
+            //string hand1 = Console.ReadLine().ToLower();
+            string hand1 = null;
+            try{
+                hand1 = getUserHand();
+            } catch(Exception){
+                Main();
+            }
+
 
             string hand2 = null;
             Random rnd = new Random();
-                int rps = rnd.Next(0,2);  //hand2 is played by computer random
+                int rps = rnd.Next(0,3);  //hand2 is played by computer random
 
             //defines hand2 response to hand1 entry
             if (rps == 0)
