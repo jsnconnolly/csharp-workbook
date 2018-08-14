@@ -6,6 +6,7 @@ namespace Checkpoint1
     {
         static void Main(string[] args)
         {
+            //project selector menu
             Console.WriteLine("Select A Program");
             Console.WriteLine("1 - divBy3");
             Console.WriteLine("2 - sumCalc");
@@ -13,7 +14,7 @@ namespace Checkpoint1
             Console.WriteLine("4 - guessNum");
             Console.WriteLine("5 - findMax");
             string input = Console.ReadLine();
-            // project Menu
+            
             
             if (input == "1")
             {
