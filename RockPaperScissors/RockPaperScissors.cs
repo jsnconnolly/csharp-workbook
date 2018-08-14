@@ -16,7 +16,7 @@ namespace RockPaperScissors
 
             string hand2 = null;
             Random rnd = new Random();
-                int rps = rnd.Next(0,2);  //hand2 is played by computer random
+                int rps = rnd.Next(0,3);  //hand2 is played by computer random
 
             //defines hand2 response to hand1 entry
             if (rps == 0)
