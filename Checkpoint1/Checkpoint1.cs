@@ -103,6 +103,9 @@ namespace Checkpoint1
 
         static void findMax()
         {
+        int[] maxArray = {5, 1, 3, 8, 4, 11011};
+        Array.Sort (maxArray);
+        Console.WriteLine ("The largest number is: \n" + maxArray [maxArray.Length - 1]);
         // next function here
         }
 
