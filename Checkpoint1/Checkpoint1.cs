@@ -4,6 +4,11 @@ namespace Checkpoint1
 {
     class Program
     {
+        public static int sumTotal = 0;
+        public static Random random = new Random();
+        public static int returnValue = random.Next(1, 10);
+
+        
         static void Main(string[] args)
         {
             //project selector menu
@@ -23,6 +28,7 @@ namespace Checkpoint1
             
             else if(input == "2")
             {
+                
                 sumCalc();
             }
             else if(input == "3")
@@ -40,6 +46,7 @@ namespace Checkpoint1
 
         }
 
+        //run numbers 1-100 divisible by 3
         static void divBy3()
         {
         for (int i = 1; i <= 100; i++)
@@ -49,14 +56,29 @@ namespace Checkpoint1
             Console.WriteLine(i);
         }
         }
-        
+        //enter a number and calculate sum of that number
         static void sumCalc()
+        {            
+
+        Console.WriteLine("Enter a number or OK");
+        string input = Console.ReadLine();
+
+        if (input.ToLower() == "ok")
         {
-        // next function here
+        Console.ReadLine();
         }
+        else 
+        {
+        int numVal = Int32.Parse(input);        
+        sumTotal = numVal + sumTotal;
+        Console.WriteLine(sumTotal);
+        sumCalc();
+        }
+    }
         
         
         
+        //enters number and calculates and multiplys by all lower numbers
         static void factoral()
         {
         int sum=1;
@@ -71,42 +93,52 @@ namespace Checkpoint1
         }    
     
 
-      static void guessNum()
+        static void guessNum()
         {  
-        Random random = new Random();
 
-        int returnValue = random.Next(1, 10);
+        ///int returnValue = random.Next(1, 10); made int public static in main class so string names can be used again
 
-        int Guess = 0;
-
+        
+        Console.WriteLine(returnValue);
         Console.WriteLine("Guess a Number Between 1 and 10");
+        string randomInput = Console.ReadLine();
+        int Guess = Convert.ToInt32(randomInput);
 
-        while (Guess != returnValue)
+        if (Guess != returnValue)
         {
-            Guess = Convert.ToInt32(Console.Read());
 
             if (Guess < returnValue)
             {
-                Console.WriteLine("No, Higher" + Guess + ". Can you guess what it is?");
+                Console.WriteLine("No, Higher than " + Guess + ". Can you guess what it is?");
+                guessNum();
             }
             else if (Guess > returnValue)
             {
-                Console.WriteLine("No, Lower" + Guess + ". Can you guess what it is?");
+               Console.WriteLine("No, Lower than " + Guess + ". Can you guess what it is?");
+               guessNum();
             }
 
         }
-
-        Console.WriteLine("Well done! The answer was " + returnValue);
-        Console.ReadLine();     
-         // next function here
+        else if (Guess == returnValue)
+        {
+            Console.WriteLine("Well done! The answer was " + returnValue);
+            Console.ReadLine();     
         }
 
+        
+        }
+
+        //finding max number, while converting a string into an array
         static void findMax()
         {
-        int[] maxArray = {5, 1, 3, 8, 4, 11011};
-        Array.Sort (maxArray);
-        Console.WriteLine ("The largest number is: \n" + maxArray [maxArray.Length - 1]);
-        // next function here
+        Console.WriteLine("Enter a range of numbers separatd by commas");
+        string maxInput = Console.ReadLine();
+        
+        string[] tokens = maxInput.Split(',');
+        int[] convertedItems = Array.ConvertAll<string, int>(tokens, int.Parse);
+
+        Array.Sort (convertedItems);
+        Console.WriteLine ("The largest number is: \n" + convertedItems [convertedItems.Length - 1]);
         }
 
 
