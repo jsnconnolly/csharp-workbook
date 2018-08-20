@@ -6,19 +6,73 @@ namespace RockPaperScissors
     {
         public static int score1 = 0;
         public static int score2 = 0;  //default values
-
+        
         public static void Main()
         
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Hello!");
             Console.WriteLine("Enter Rock, Paper or Scissors");
-            string hand1 = Console.ReadLine().ToLower();
+            
+             string hand1 = Console.ReadLine().ToLower();
+            
+           
+             try
+            {            
+             if (hand1 == "rock")
+                {
+                    gameCode(hand1);
+                }
+                
+            else if (hand1 == "paper")
+                {
+                    gameCode(hand1);
+                }
+            else if (hand1 == "scisors")
+                {
+                    gameCode(hand1);
+                }
 
+            }
+
+            catch(Exception)
+            {
+                Console.WriteLine("So Sorry!");
+            }
+
+            finally
+            {
+                Console.WriteLine("Nice Job!");
+            }
+
+        }
+          //get user input and find if valid
+        //   static string getInput(){
+            
+        //     string hand1 = Console.ReadLine().ToLower();
+       
+        //      if (hand1 == "rock")
+        //         {
+        //             return hand1;
+        //         }
+                
+        //     else if (hand1 == "paper")
+        //         {
+        //             return hand1;
+        //         }
+        //     else if (hand1 == "scisors")
+        //         {
+        //             return hand1;
+        //         }
+        // }
+      
+        public static void gameCode(string newHand){
+            
             string hand2 = null;
             Random rnd = new Random();
-                int rps = rnd.Next(0,3);  //hand2 is played by computer random
-
+                int rps = rnd.Next(0,3);  
+            //hand2 is played by computer random
             //defines hand2 response to hand1 entry
+            
             if (rps == 0)
             {
                 hand2 = "rock";
@@ -32,24 +86,21 @@ namespace RockPaperScissors
                 hand2 = "scissors";
             }
                  
-            
-            
-            Console.WriteLine(CompareHands(hand1, hand2));
+     
+            Console.WriteLine(CompareHands(newHand, hand2));
             Console.WriteLine("Your Score:" + score1);
             Console.WriteLine("Computer Score:" + score2);
             Console.WriteLine("Play again Yes or No");
             string hand = Console.ReadLine().ToLower();
             if (hand=="yes")
             {
-                Main(); //recurssion
+                gameCode(newHand); //recurssion
             }
             else
             {
                 Console.Read();
             }
-
         }
-        
         public static string CompareHands(string hand1, string hand2)
         {    
             //all possibilities for palys, with win answer
@@ -75,13 +126,19 @@ namespace RockPaperScissors
                 score2++;
                 win = "Computer Wins!";
             }
-            else
+
+            
+            
+            
+            
+            /*else
             {
                 //returns line without computer play
                 //replaces Try Catch???
+                //continues play
                 Console.WriteLine("Invalid Selection");
                 Main();
-            }
+            }*/
            
             return win;
             
