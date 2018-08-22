@@ -15,6 +15,12 @@ namespace Practice {
             HotelRoom standard1 = new HotelRoom("201", 30);
             HotelRoom standard2 = new HotelRoom("202", 30);
 
+            Boat speed = new Boat("TX123", 500.65);
+            Boat seaDoo = new Boat("TX122", 200);
+            Boat canoe = new Boat("TX111", 25.25);
+
+
+
             List<Rentable> rentablThings = new List<Rentable>();
             rentablThings.Add(mercedes);
             rentablThings.Add(lamborghini);
@@ -22,42 +28,18 @@ namespace Practice {
             rentablThings.Add(suite);
             rentablThings.Add(standard1);
             rentablThings.Add(standard2);
+            rentablThings.Add(speed);
+            rentablThings.Add(seaDoo);
+            rentablThings.Add(canoe);
 
             
-            Console.WriteLine("James' way");
-            // james' way
+            //Console.WriteLine("James' way");
+            //Clean way to pull each class
             foreach(Rentable thing in rentablThings) {
-                Console.WriteLine("if you rent this {0} for 1 day, the ammount due is {1}", 
+                Console.WriteLine("if you rent this {0} for 1 day, the ammount due is ${1}", 
                 thing.GetType().Name,
                 thing.calculateRent(1));
             }
-            //Console.WriteLine("\n\n");
-            //Console.WriteLine("Robert's way");
-            /*robert's way
-            foreach(Rentable thing in rentablThings) {
-                String thingType = "";
-                if(thing is Car){
-                    thingType = "car";
-                } else if (thing is HotelRoom){
-                    thingType = "hotel room";
-                }
-
-                Console.WriteLine("if you rent this {0} for 1 day, the ammount due is {1}", 
-                thingType,
-                thing.calculateRent(1));
-            }*/
-
-
-            //Console.WriteLine("\n\n");
-            //Console.WriteLine("Lisa's way");
-            /*Lisa's' way
-            foreach(Rentable thing in rentablThings) {
-                Console.WriteLine("if you rent this {0} for 1 day, the ammount due is {1}", 
-                thing.getType(),
-                thing.calculateRent(1));
-            }*/
-
-
         }        
     }
 
@@ -103,7 +85,7 @@ namespace Practice {
         }
     }
 
-    public class HotelRoom :Rentable{
+    public class HotelRoom : Rentable{
         public String roomNo {get; private set;}
         public double dailyRate {get; private set;}
 
@@ -122,6 +104,25 @@ namespace Practice {
          public double calculateRent(double daysToRent){
             return dailyRate * daysToRent;
         }
-        
+    }
+    public class Boat : Rentable{
+        public String typeOfBoat {get; private set;}
+        public double dailyRate {get; private set;}
+
+        public Boat(String typeOfBoat, double rate){
+            this.dailyRate = rate;
+            this.typeOfBoat = typeOfBoat;
+        }
+
+            public String getType(){
+            return "Boat";
+        }
+         /**
+         * Returns the amount due to rent this room for the number of days passed in
+         * daysToRent: the number of days to rent this room
+         */
+         public double calculateRent(double daysToRent){
+            return dailyRate * daysToRent;
+        }
     }
 }
