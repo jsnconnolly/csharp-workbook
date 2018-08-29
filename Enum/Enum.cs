@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace csharp_workbook
+namespace Enum
 {
     class Program
     {
