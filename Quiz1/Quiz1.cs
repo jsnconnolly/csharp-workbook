@@ -7,7 +7,7 @@ namespace Quiz1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Make Notes!!!");
+            Console.WriteLine("Do Console Line Notes!!!");
             Console.WriteLine("Welcome Back!");
             //use of the modules, be carefull using negatives
             Console.WriteLine((7%(-3)));
