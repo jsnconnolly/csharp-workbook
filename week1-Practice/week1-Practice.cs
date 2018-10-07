@@ -4,6 +4,10 @@ public class Program
 {
     public static void Main()
     {
+        int one = 0;
+        int two = 0;
+        int yard = 12;
+        int inch = 12;
         decimal num = 3.35m;
         string name = "";
         string lastname = "";
@@ -16,6 +20,14 @@ public class Program
         int ten = 10;
 
 
+        
+        Console.WriteLine("Please enter a whole number:");
+        one = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please enter a whole number:");
+        two = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("{0} Pluse {1} equals {2}", one, two, one + two);
+        
+        Console.WriteLine("12 yards is {0} inches", yard * inch);
         Console.WriteLine("The product of NUM is {0}", num * num);
         
         Console.WriteLine("Please enter your first name:");
