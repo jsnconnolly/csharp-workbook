@@ -8,6 +8,7 @@ public class Program
         string lastname = "";
         int age = 0;
         int year = 7;
+        string job = "";
         string band = "";
         string team = "";
 
@@ -20,16 +21,18 @@ public class Program
         Console.WriteLine("Please enter your age:");
         // Convert.ToInt32 takes in the numbers 
         age = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Who is your favorite band:");
+        Console.WriteLine("What is your Job?");
+        job = Console.ReadLine();
+        Console.WriteLine("Who is your favorite band?");
         band = Console.ReadLine();
-        Console.WriteLine("What sports team do you cheer for:");
+        Console.WriteLine("What sports team do you cheer for?");
         team = Console.ReadLine();
 
 
-        Console.WriteLine
-            (@"Hello! My name is {0} {1}. 
-			I am {3} in dog years. 
-			My favorite band is {4}. 
-			I support {5}! ", name, lastname, age, year * age, band, team);
+        Console.WriteLine(@"Hello! My name is {0} {1}.", name, lastname); 
+		Console.WriteLine("I am {1} in dog years.", age, year * age);
+        Console.WriteLine("I work as a {0}.", job);
+		Console.WriteLine("My favorite band is {0}.", band);
+		Console.WriteLine("I support {0}! ", team);
     }
 }
