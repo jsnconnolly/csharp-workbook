@@ -4,6 +4,7 @@ public class Program
 {
     public static void Main()
     {
+        decimal num = 3.35m;
         string name = "";
         string lastname = "";
         int age = 0;
@@ -11,8 +12,12 @@ public class Program
         string job = "";
         string band = "";
         string team = "";
+        int hund = 100;
+        int ten = 10;
 
 
+        Console.WriteLine("The product of NUM is {0}", num * num);
+        
         Console.WriteLine("Please enter your first name:");
         // ReadLine enters the string
         name = Console.ReadLine();
@@ -34,5 +39,11 @@ public class Program
         Console.WriteLine("I work as a {0}.", job);
 		Console.WriteLine("My favorite band is {0}.", band);
 		Console.WriteLine("I support {0}! ", team);
+
+        Console.WriteLine("The Sum of 100 and 10 is {0}", hund + ten);
+        Console.WriteLine("The Product of 100 and 10 is {0}", hund * ten);
+        Console.WriteLine("The Difference of 100 and 10 is {0}", hund - ten);
+        Console.WriteLine("The Quotient of 100 and 10 is {0}", hund / ten);
+
     }
 }
