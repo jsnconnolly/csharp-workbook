@@ -55,7 +55,7 @@ namespace TextGame
             if (ch3 == "Y" || ch3 == "y" || ch3 == "Yes" || ch3 == "YES" || ch3 == "yes")
             {
                 if (stick == 1)
-                    Console.WriteLine("You only have a stick to fight with!");
+                Console.WriteLine("You only have a stick to fight with!");
                 Console.WriteLine("You quickly jab the spider in it's eye and gain an advantage");
                 Thread.Sleep(2000);
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -99,6 +99,7 @@ namespace TextGame
             else
             {
                 Console.WriteLine("You don't have anything to fight with!");
+                Console.WriteLine("You quickly jab it with your finger");
                 Thread.Sleep(2000);
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 Console.WriteLine("                  Fighting...                   ");
@@ -135,12 +136,13 @@ namespace TextGame
                     complete = 1;
                     return;
                 }
-            
-            Console.WriteLine("You choose not to fight the spider.");
-            Thread.Sleep(1000);
-            Console.WriteLine("As you turn away, it ambushes you and impales you with it's fangs!!!");
-            //complete = 0;
-            return;
+
+
+                Console.WriteLine("You choose not to fight the spider.");
+                Thread.Sleep(1000);
+                Console.WriteLine("As you turn away, it ambushes you and impales you with it's fangs!!!");
+                //complete = 0;
+                return;
             }
         }
     }
