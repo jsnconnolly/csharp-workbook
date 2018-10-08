@@ -20,6 +20,7 @@ public class Program
         Console.WriteLine("12 yards is {0} inches", yard * inch);
 
         decimal num = 3.35m;
+        // m suffix used with decimal
 
         Console.WriteLine("The product of NUM(3.35) is {0}", num * num);
 
