@@ -111,8 +111,8 @@ namespace TextGame
                 int fdmg1 = rnd.Next(1, 8);
                 int edmg1 = rnd.Next(1, 5);
 
-                Console.WriteLine("you hit a", fdmg1);
-                Console.WriteLine("the spider hits a", edmg1);
+                Console.WriteLine("you hit a {0}", fdmg1);
+                Console.WriteLine("the spider hits a {0}", edmg1);
                 Thread.Sleep(2000);
 
                 int complete = 0;
@@ -135,6 +135,12 @@ namespace TextGame
                     complete = 1;
                     return;
                 }
+            
+            Console.WriteLine("You choose not to fight the spider.");
+            Thread.Sleep(1000);
+            Console.WriteLine("As you turn away, it ambushes you and impales you with it's fangs!!!");
+            //complete = 0;
+            return;
             }
         }
     }
