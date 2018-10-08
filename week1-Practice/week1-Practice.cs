@@ -34,6 +34,7 @@ public class Program
         string lastname = "";
         int age = 0;
         int year = 2018;
+        // adjust to current year
         string job = "";
         string band = "";
         string team = "";
