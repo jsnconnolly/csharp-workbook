@@ -74,6 +74,67 @@ namespace TextGame
                 Thread.Sleep(2000);
                 //generates random ints in the range entered after .Next
 
+                int complete = 0;
+
+                if (edmg1 > fdmg1)
+                {
+                    Console.WriteLine("The spider has dealt more damage than you!");
+                    complete = 0;
+                    return;
+                }
+                else if (fdmg1 < 5)
+                {
+                    Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
+                    complete = 1;
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("You killed the spider!");
+                    complete = 1;
+                    return;
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("You don't have anything to fight with!");
+                Thread.Sleep(2000);
+                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Console.WriteLine("                  Fighting...                   ");
+                Console.WriteLine("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
+                Console.WriteLine("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
+                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Thread.Sleep(2000);
+
+                Random rnd = new Random();
+                int fdmg1 = rnd.Next(1, 8);
+                int edmg1 = rnd.Next(1, 5);
+
+                Console.WriteLine("you hit a", fdmg1);
+                Console.WriteLine("the spider hits a", edmg1);
+                Thread.Sleep(2000);
+
+                int complete = 0;
+
+                if (edmg1 > fdmg1)
+                {
+                    Console.WriteLine("The spider has dealt more damage than you!");
+                    complete = 0;
+                    return;
+                }
+                else if (fdmg1 < 5)
+                {
+                    Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
+                    complete = 1;
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("You killed the spider!");
+                    complete = 1;
+                    return;
+                }
             }
         }
     }
