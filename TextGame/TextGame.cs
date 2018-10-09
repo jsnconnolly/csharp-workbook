@@ -46,103 +46,113 @@ namespace TextGame
                 Console.WriteLine("As you draw closer, you begin to make out the object as an eye!");
                 Thread.Sleep(1);
                 Console.WriteLine("The eye belongs to a giant spider!");
-            }
+                
 
-            Console.WriteLine("Do you try to fight it? [Y/N]");
+                Console.WriteLine("Do you try to fight it? [Y/N]");
 
-            String ch3 = Console.ReadLine();
+                String ch3 = Console.ReadLine();
 
-            if (ch3 == "Y" || ch3 == "y" || ch3 == "Yes" || ch3 == "YES" || ch3 == "yes")
-            {
-                if (stick == 1)
-                Console.WriteLine("You only have a stick to fight with!");
-                Console.WriteLine("You quickly jab the spider in it's eye and gain an advantage");
-                Thread.Sleep(2000);
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Console.WriteLine("                  Fighting...                   ");
-                Console.WriteLine("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
-                Console.WriteLine("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Thread.Sleep(2000);
-
-                Random rnd = new Random();
-                int fdmg1 = rnd.Next(3, 10);
-                int edmg1 = rnd.Next(1, 5);
-
-                Console.WriteLine("you hit a {0}", fdmg1);
-                Console.WriteLine("the spider hits a {0}", edmg1);
-                Thread.Sleep(2000);
-                //generates random ints in the range entered after .Next
-
-                int complete = 0;
-
-                if (edmg1 > fdmg1)
+                if (ch3 == "Y" || ch3 == "y" || ch3 == "Yes" || ch3 == "YES" || ch3 == "yes")
                 {
-                    Console.WriteLine("The spider has dealt more damage than you!");
-                    complete = 0;
-                    return;
-                }
-                else if (fdmg1 < 5)
-                {
-                    Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
-                    complete = 1;
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("You killed the spider!");
-                    complete = 1;
-                    return;
-                }
-            }
+                    if (stick == 1){
+                        Console.WriteLine("You only have a stick to fight with!");
+                        Console.WriteLine("You quickly jab the spider in it's eye and gain an advantage");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        Console.WriteLine("                  Fighting...                   ");
+                        Console.WriteLine("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
+                        Console.WriteLine("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        Thread.Sleep(2000);
 
-            else
-            {
-                Console.WriteLine("You don't have anything to fight with!");
-                Console.WriteLine("You quickly jab it with your finger");
-                Thread.Sleep(2000);
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Console.WriteLine("                  Fighting...                   ");
-                Console.WriteLine("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
-                Console.WriteLine("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Thread.Sleep(2000);
+                        Random rnd = new Random();
+                        int fdmg1 = rnd.Next(3, 10);
+                        int edmg1 = rnd.Next(1, 5);
 
-                Random rnd = new Random();
-                int fdmg1 = rnd.Next(1, 8);
-                int edmg1 = rnd.Next(1, 5);
+                        Console.WriteLine("you hit a {0}", fdmg1);
+                        Console.WriteLine("the spider hits a {0}", edmg1);
+                        Thread.Sleep(2000);
+                        //generates random ints in the range entered after .Next
 
-                Console.WriteLine("you hit a {0}", fdmg1);
-                Console.WriteLine("the spider hits a {0}", edmg1);
-                Thread.Sleep(2000);
+                        int complete = 0;
 
-                int complete = 0;
+                        if (edmg1 > fdmg1)
+                        {
+                            Console.WriteLine("The spider has dealt more damage than you!");
+                            complete = 0;
+                            return;
+                        }
+                        else if (fdmg1 < 5)
+                        {
+                            Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
+                            complete = 1;
+                            return;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You killed the spider!");
+                            complete = 1;
+                            return;
+                        }
+                    }
 
-                if (edmg1 > fdmg1)
-                {
-                    Console.WriteLine("The spider has dealt more damage than you!");
-                    complete = 0;
-                    return;
-                }
-                else if (fdmg1 < 5)
-                {
-                    Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
-                    complete = 1;
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("You killed the spider!");
-                    complete = 1;
-                    return;
-                }
+                    else 
+                    {
+                        Console.WriteLine("You don't have anything to fight with!");
+                        Console.WriteLine("You quickly jab it with your finger");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        Console.WriteLine("                  Fighting...                   ");
+                        Console.WriteLine("   YOU MUST HIT ABOVE A 5 TO KILL THE SPIDER    ");
+                        Console.WriteLine("IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE");
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        Thread.Sleep(2000);
 
+                        Random rnd = new Random();
+                        int fdmg1 = rnd.Next(1, 8);
+                        int edmg1 = rnd.Next(1, 5);
 
+                        Console.WriteLine("you hit a {0}", fdmg1);
+                        Console.WriteLine("the spider hits a {0}", edmg1);
+                        Thread.Sleep(2000);
+
+                        int complete = 0;
+
+                        if (edmg1 > fdmg1)
+                        {
+                            Console.WriteLine("The spider has dealt more damage than you!");
+                            complete = 0;
+                            return;
+                        }
+                        else if (fdmg1 < 5)
+                        {
+                            Console.WriteLine("You didn't do enough damage to kill the spider, but you manage to escape");
+                            complete = 1;
+                            return;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You killed the spider!");
+                            complete = 1;
+                            return;
+                        }
+                    }
+                }    
                 Console.WriteLine("You choose not to fight the spider.");
                 Thread.Sleep(1000);
                 Console.WriteLine("As you turn away, it ambushes you and impales you with it's fangs!!!");
                 //complete = 0;
                 return;
+
+            }
+            else
+            {
+                Console.WriteLine("You turn away from the glowing object, and attempt to leave the cave...");
+                Thread.Sleep(1000);
+                Console.WriteLine("But something won't let you....");
+                Thread.Sleep(2000);
+                return;
+ 
             }
         }
     }
