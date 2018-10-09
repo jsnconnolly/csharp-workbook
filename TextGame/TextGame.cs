@@ -141,7 +141,6 @@ namespace TextGame
                 Console.WriteLine("You choose not to fight the spider.");
                 Thread.Sleep(1000);
                 Console.WriteLine("As you turn away, it ambushes you and impales you with it's fangs!!!");
-                //complete = 0;
                 return;
 
             }
@@ -157,3 +156,4 @@ namespace TextGame
         }
     }
 }
+// be extremely mindful of indentation/formatting!!!
