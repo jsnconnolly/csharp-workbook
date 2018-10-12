@@ -10,10 +10,10 @@ namespace RockPaperScissors
             Console.WriteLine("Enter hand 1:");	
             Console.WriteLine("Rock, Paper or Sissors?:");
             string hand1 = Console.ReadLine().ToLower();
-            Console.WriteLine("Enter hand 2:");	            
+            //Console.WriteLine("Enter hand 2:");	            
             string hand2 = null;
             Random rnd = new Random();
-            int rps = rnd.Next(0,2); 
+            int rps = rnd.Next(0,3); 
             if (rps == 0)
             {
                 hand2 = "rock";
@@ -31,7 +31,7 @@ namespace RockPaperScissors
             Console.WriteLine("Computer played: {0}", hand2);
             Console.WriteLine(CompareHands(hand1, hand2));
             // leave this command at the end so your program does not close automatically
-            Console.ReadLine();	        
+            //Console.ReadLine();	        
         }	        
         	        
         public static string CompareHands(string hand1, string hand2)
