@@ -48,12 +48,12 @@ namespace RockPaperScissors
             }
             else if (hand1 == "paper" && hand2 == "rock" || hand1 == "rock" && hand2 == "sissors" || hand1 == "sissors" && hand2 == "paper")
             {
-                win = "You Win!";
+                win = "The Human Won!";
             }
             
             else if (hand1 == "rock" && hand2 == "paper" || hand1 == "sissors" && hand2 == "rock" || hand1 == "paper" && hand2 == "sissors")
             {
-                win = "Computer Wins!";
+                win = "The Computer Won!";
             }
            
             return win;
