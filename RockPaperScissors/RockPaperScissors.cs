@@ -29,15 +29,13 @@ namespace RockPaperScissors
                  
             
             Console.WriteLine("Computer played: {0}", hand2);
-            Console.WriteLine(CompareHands(hand1, hand2));
-            // leave this command at the end so your program does not close automatically
-            //Console.ReadLine();	        
+            Console.WriteLine(CompareHands(hand1, hand2));	        
         }	        
         	        
         public static string CompareHands(string hand1, string hand2)
         {	
-            Random rnd = new Random();
-            int rock = rnd.Next(0,2); 
+            //Random rnd = new Random();
+            //int rock = rnd.Next(0,3); 
         
              
             
@@ -57,6 +55,8 @@ namespace RockPaperScissors
             }
            
             return win;
-        }	        
+        }
+
+
     }	    
 }	
