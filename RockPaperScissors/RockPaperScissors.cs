@@ -7,11 +7,23 @@ namespace RockPaperScissors
         public static void Main()
 
         {
+
+               // run tests and print out if tests passed or not
+            if(tests()){
+                Console.WriteLine("Tests passed.");
+            } else {
+                Console.WriteLine("Tests failed.");
+            }
+
+            //your code to get user input and call CompareHands method here
+
             Console.WriteLine("Enter hand 1:");
             Console.WriteLine("Rock, Paper or Sissors?:");
             string hand1 = Console.ReadLine().ToLower();
             //Console.WriteLine("Enter hand 2:");	            
             string hand2 = null;
+            
+
             Random rnd = new Random();
             int rps = rnd.Next(0, 3);
             if (rps == 0)
@@ -26,6 +38,8 @@ namespace RockPaperScissors
             {
                 hand2 = "sissors";
             }
+
+            
 
 
             Console.WriteLine("Computer played: {0}", hand2);
