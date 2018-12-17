@@ -32,30 +32,31 @@
    
    class Program  
    {  
+     //commonly used string tabbing
      public static string mt = "\t\t\t";  
      public static string st = "\t\t ";  
      public static string xst = "\t\t";  
    
      //UI   
-     public static void header()  
+     public static void header()  //Draw the main Menu Header
      {  
        Console.Clear();  
        DateTime dtu = DateTime.Now;  
    
-       Console.WriteLine("\n\n\n\t\t\t\t\t" + dtu.ToString("dd-MM-yyyy"));  
+       Console.WriteLine("\n\n\n\t\t\t\t\t" + dtu.ToString("MM-dd-yyyy"));  
        Console.WriteLine("\t\t====================================");  
        Console.WriteLine("\t\t\t TO-DO List");  
        Console.WriteLine("\t\t====================================");  
      }  
    
-     public static void footer()  
+     public static void footer()  //Draw the main Menu Footer
      {  
        Console.WriteLine("\t\t====================================");  
      }  
    
    
    
-     public static void UI_msg(String msg)  
+     public static void Prompt(String msg)  //Deliver common error messages and instructions
      {  
        header();  
        Console.WriteLine("\n\n" + st + msg + "\n\n");  
@@ -66,11 +67,11 @@
      }  
    
    
-     public static bool chk_date(String daaat)  
+     public static bool chk_date(String dateChk)  //checking for a valid date entry
      {  
-       string[] formats = { "d-M-yyyy" };  
+       string[] formats = { "M-d-yyyy" };  
        DateTime parsedDateTime;  
-       if (DateTime.TryParseExact(daaat, formats, new CultureInfo("en-US"),  
+       if (DateTime.TryParseExact(dateChk, formats, new CultureInfo("en-US"),  
                DateTimeStyles.None, out parsedDateTime))  
        {  
          return true;  
@@ -84,20 +85,20 @@
      public static void Main()  
      {  
        Random rnd = new Random();  
-       int ID = rnd.Next(89);  
+       int ID = rnd.Next(89);  //generate random ID
    
-       List<To_do> TD_Task = new List<To_do>();  
+       List<To_do> TD_Task = new List<To_do>();  //setup the list container
        bool check = true; ;  
    
-     SUDO_MAIN:  
+     MAIN:  //main menu
    
        while (true)  
        {  
    
    
-         header();  
+         header();  //Todo Menu
          Console.WriteLine(xst + "1.New Task.\t\t6.Update Task.\n");  
-         Console.WriteLine(xst + "2.View Al.\t\t7.Delete Task.\n");  
+         Console.WriteLine(xst + "2.View All.\t\t7.Delete Task.\n");  
          Console.WriteLine(xst + "3.View b/w Dates.\t8.Sort.\n");  
          Console.WriteLine(xst + "4.Find Task.\t\t9.Exit\n");  
          Console.WriteLine(xst + "5.Find Duplicates.");  
@@ -112,25 +113,25 @@
          catch (Exception)  
          {  
    
-           UI_msg("ERROR: Insert Only Intergers!");  
+           Prompt("ERROR: Insert Only Intergers!");  
          }  
    
-   
+          //Menu options and Error Catching based on selection (ch)
          switch (ch)  
          {  
            case 1:  
              header();  
-             Console.Write("\t\tEnter the Date.\t[dd-MM-yyyy]\n\t\t");  
+             Console.Write("\t\tEnter the Date.\t[MM-dd-yyyy]\n\t\t");  
              try  
              {  
-               string dat = Console.ReadLine();  
-               string daat = dat;  
+               string dateEntry = Console.ReadLine();  
+               string storedDateEntry = dateEntry;  
    
                DateTime cur_time = DateTime.Now;  
-               cur_time.ToString("d-M-yyyy");  
+               cur_time.ToString("M-d-yyyy");  
                try  
                {  
-                 TimeSpan duration = DateTime.Parse(cur_time.ToString()) - (DateTime.Parse(dat.ToString()));  
+                 TimeSpan duration = DateTime.Parse(cur_time.ToString()) - (DateTime.Parse(dateEntry.ToString()));  
    
    
                  int day = (int)Math.Round(duration.TotalDays);  
@@ -149,22 +150,22 @@
                  if (day >= x) // if date less than todays   
                  {  
                    DateTime dtu = DateTime.Now;  
-                   string msg = "Plz select date from\n\t\t" + dtu.ToString("d-M-yyyy") + " onwards!";  
-                   UI_msg("ERROR: " + msg);  
-                   goto SUDO_MAIN;  
+                   string msg = "Please select date from\n\t\t" + dtu.ToString("M-d-yyyy") + " onwards!";  
+                   Prompt("ERROR: " + msg);  
+                   goto MAIN;  
                  }  
    
                }  
                catch (FormatException)  
                {  
-                 UI_msg("ERROR: Invalid Date!");  
-                 goto SUDO_MAIN;  
+                 Prompt("ERROR: Invalid Date!");  
+                 goto MAIN;  
    
                }  
    
    
    
-               if (chk_date(daat)) // check validity of date   
+               if (chk_date(storedDateEntry)) // check validity of date   
                {  
                  Console.Write("\n\t\tEnter Task.\n\t\t");  
                  string msg = Console.ReadLine();  
@@ -175,25 +176,25 @@
                  {  
                    ID++;  
    
-                   TD_Task.Add(new To_do(ID, DateTime.Parse(dat), msg, lvl));  
-                   UI_msg("New Task created with Task ID = " + ID.ToString());  
+                   TD_Task.Add(new To_do(ID, DateTime.Parse(dateEntry), msg, lvl));  
+                   Prompt("New Task created with Task ID = " + ID.ToString());  
                    TD_Task.Sort(); // Sort db   
                  }  
                  else  
                  {  
-                   UI_msg("ERROR: Only between [1-5]!");  
+                   Prompt("ERROR: Only between [1-5]!");  
                  }  
                }  
                else  
                {  
-                 UI_msg("ERROR: Invalid Date!");  
+                 Prompt("ERROR: Invalid Date!");  
                }  
    
    
              }  
              catch (Exception)  
              {  
-               UI_msg("ERROR: Enter Integer Only!!");  
+               Prompt("ERROR: Enter Integer Only!!");  
              }  
              break;  
    
@@ -204,7 +205,7 @@
              foreach (To_do x in TD_Task)  
              {  
                check = false;  
-               Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("dd-MM-yyyy") + "\t" + x.Task + "\t\t" + x.Lvl_Imp);  
+               Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("MM-dd-yyyy") + "\t" + x.Task + "\t\t" + x.Lvl_Imp);  
              }  
              if (check)  
              {  
@@ -223,12 +224,12 @@
              string cmp_date1, mon1, day1, S_d, E_d, S_m, E_m, S_da, E_da;  
              int SD, ED, cmp_date, mon, SM, EM, dayx, SDA, EDA;  
    
-             Console.Write("\t\tEnter starting Date.\t[dd-MM-yyyy]\n\t\t");  
+             Console.Write("\t\tEnter starting Date.\t[MM-dd-yyyy]\n\t\t");  
              string Sdat3 = Console.ReadLine();  
    
              if (chk_date(Sdat3)) // check validity of date   
              {  
-               Console.Write("\n\t\tEnter ending Date.\t[dd-MM-yyyy]\n\t\t");  
+               Console.Write("\n\t\tEnter ending Date.\t[MM-dd-yyyy]\n\t\t");  
                string Edat3 = Console.ReadLine();  
                Console.WriteLine("\t\t------------------------------------");  
                Console.WriteLine("\t\tID \tDate\tTask\tLevel");  
@@ -273,7 +274,7 @@
                        if (dayx >= SDA && dayx <= EDA)  // Range of Days  
                        {  
                          check = false;  
-                         Console.WriteLine("\t\t" + TD_Task[i].Todo_ID + "  " + TD_Task[i].date.ToString("dd-MM-yyyy") + "\t " + TD_Task[i].Task + "\t " + TD_Task[i].Lvl_Imp);  
+                         Console.WriteLine("\t\t" + TD_Task[i].Todo_ID + "  " + TD_Task[i].date.ToString("MM-dd-yyyy") + "\t " + TD_Task[i].Task + "\t " + TD_Task[i].Lvl_Imp);  
                        }  
                      }  
                    }  
@@ -289,12 +290,12 @@
                }  
                else  
                {  
-                 UI_msg("ERROR: Invalid Ending Date!");  
+                 Prompt("ERROR: Invalid Ending Date!");  
                }  
              }  
              else  
              {  
-               UI_msg("ERROR: Invalid Starting Date!");  
+               Prompt("ERROR: Invalid Starting Date!");  
              }  
    
              break;  
@@ -316,7 +317,7 @@
                  if (str1.Contains(str))  
                  {  
                    check = false;  
-                   Console.WriteLine("\t\t" + TD_Task[i].Todo_ID + "  " + TD_Task[i].date.ToString("dd-MM-yyyy") + "\t " + TD_Task[i].Task + "\t " + TD_Task[i].Lvl_Imp);  
+                   Console.WriteLine("\t\t" + TD_Task[i].Todo_ID + "  " + TD_Task[i].date.ToString("MM-dd-yyyy") + "\t " + TD_Task[i].Task + "\t " + TD_Task[i].Lvl_Imp);  
                  }  
    
    
@@ -333,7 +334,7 @@
              catch (Exception)  
              {  
    
-               UI_msg("Error in Find string");  
+               Prompt("Error in Find string");  
              }  
    
    
@@ -365,7 +366,7 @@
              if (z >= 2)  
              {  
                check = false;  
-               Console.WriteLine("\t\t" + y.Todo_ID + "  " + y.date.ToString("dd-MM-yyyy") + "\t" + y.Task + "\t" + y.Lvl_Imp);  
+               Console.WriteLine("\t\t" + y.Todo_ID + "  " + y.date.ToString("MM-dd-yyyy") + "\t" + y.Task + "\t" + y.Lvl_Imp);  
              }  
              }  
    
@@ -392,17 +393,17 @@
                  if (TD_Task[i].Todo_ID == T_ID)  
                  {  
                    check = false;  
-                   Console.Write("\t\tEnter the Date.\t[dd-MM-yyyy]\n\t\t");  
+                   Console.Write("\t\tEnter the Date.\t[MM-dd-yyyy]\n\t\t");  
                    try  
                    {  
-                     string dat = Console.ReadLine();  
-                     string daat = dat;  
+                     string dateEntry = Console.ReadLine();  
+                     string storedDateEntry = dateEntry;  
    
                      DateTime cur_time = DateTime.Now;  
-                     cur_time.ToString("d-M-yyyy");  
+                     cur_time.ToString("M-d-yyyy");  
                      try  
                      {  
-                       TimeSpan duration = DateTime.Parse(cur_time.ToString()) - (DateTime.Parse(dat.ToString()));  
+                       TimeSpan duration = DateTime.Parse(cur_time.ToString()) - (DateTime.Parse(dateEntry.ToString()));  
    
    
                        int day = (int)Math.Round(duration.TotalDays);  
@@ -410,22 +411,22 @@
                        if (day >= 2) // if date less than todays   
                        {  
                          DateTime dtu = DateTime.Now;  
-                         string msg = "Plz select date from\n\t\t" + dtu.ToString("d-M-yyyy") + " onwards!";  
-                         UI_msg("ERROR: " + msg);  
-                         goto SUDO_MAIN;  
+                         string msg = "Plz select date from\n\t\t" + dtu.ToString("M-d-yyyy") + " onwards!";  
+                         Prompt("ERROR: " + msg);  
+                         goto MAIN;  
                        }  
    
                      }  
                      catch (FormatException)  
                      {  
-                       UI_msg("ERROR: Invalid Date!");  
-                       goto SUDO_MAIN;  
+                       Prompt("ERROR: Invalid Date!");  
+                       goto MAIN;  
    
                      }  
    
    
    
-                     if (chk_date(daat)) // check validity of date   
+                     if (chk_date(storedDateEntry)) // check validity of date   
                      {  
                        Console.Write("\n\t\tEnter Task.\n\t\t");  
                        string msg = Console.ReadLine();  
@@ -436,7 +437,7 @@
                        {  
    
    
-                         TD_Task[i].date = DateTime.Parse(dat);  
+                         TD_Task[i].date = DateTime.Parse(dateEntry);  
                          TD_Task[i].Task = msg;  
                          TD_Task[i].Lvl_Imp = lvl;  
    
@@ -445,19 +446,19 @@
                        }  
                        else  
                        {  
-                         UI_msg("ERROR: Only between [1-5]!");  
+                         Prompt("ERROR: Only between [1-5]!");  
                        }  
                      }  
                      else  
                      {  
-                       UI_msg("ERROR: Invalid Date!");  
+                       Prompt("ERROR: Invalid Date!");  
                      }  
    
    
                    }  
                    catch (Exception)  
                    {  
-                     UI_msg("ERROR: Enter Integer Only!!");  
+                     Prompt("ERROR: Enter Integer Only!!");  
                    }  
    
                  }  
@@ -474,7 +475,7 @@
              catch (Exception)  
              {  
    
-               UI_msg("ERROR: Insert Only Intergers!");  
+               Prompt("ERROR: Insert Only Intergers!");  
              }  
              break;  
    
@@ -510,7 +511,7 @@
              catch (Exception)  
              {  
    
-               UI_msg("ERROR: Insert Only Intergers!");  
+               Prompt("ERROR: Insert Only Intergers!");  
              }  
              break;  
    
@@ -540,7 +541,7 @@
                    foreach (To_do x in TD_Task)  
                    {  
                      check = false;  
-                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("dd-MM-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
+                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("MM-dd-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
                    }  
                    if (check)  
                    {  
@@ -563,7 +564,7 @@
                    foreach (To_do x in TD_Task)  
                    {  
                      check = false;  
-                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("dd-MM-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
+                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("MM-dd-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
                    }  
                    if (check)  
                    {  
@@ -587,7 +588,7 @@
                    foreach (To_do x in TD_Task)  
                    {  
                      check = false;  
-                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("dd-MM-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
+                     Console.WriteLine("\t\t" + x.Todo_ID + "  " + x.date.ToString("MM-dd-yyyy") + "\t" + x.Task + "\t" + x.Lvl_Imp);  
                    }  
                    if (check)  
                    {  
@@ -601,11 +602,11 @@
    
                    break;  
                  case 4:  
-                   goto SUDO_MAIN;  
+                   goto MAIN;  
    
    
                  default:  
-                   UI_msg("Invalid choice!");  
+                   Prompt("Invalid choice!");  
                    break;  
                }  
    
@@ -616,7 +617,7 @@
              break;  
    
            default:  
-             UI_msg("Invalid choice!");  
+             Prompt("Invalid choice!");  
              break;  
    
          }  
