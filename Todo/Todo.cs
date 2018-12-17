@@ -227,7 +227,7 @@
              Console.Write("\t\tEnter starting Date.\t[MM-dd-yyyy]\n\t\t");  
              string Sdat3 = Console.ReadLine();  
    
-             if (chk_date(Sdat3)) // check validity of date   
+             if (chk_date(Sdat3)) // enter validity of date   
              {  
                Console.Write("\n\t\tEnter ending Date.\t[MM-dd-yyyy]\n\t\t");  
                string Edat3 = Console.ReadLine();  
