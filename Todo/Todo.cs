@@ -87,7 +87,7 @@ namespace To_Do_List
             Random rnd = new Random();
             int ID = rnd.Next(89);  //generate random ID
 
-            List<To_do> TD_Task = new List<To_do>();  //setup the list container
+            List<To_do> TD_Task = new List<To_do>();  //setup the list container, just storing to memory fix this
             bool check = true; ;
 
         MAIN:  //main menu
